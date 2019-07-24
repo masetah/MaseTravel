@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%-include ./partials/_head.ejs%> 
 <body>
+ <%-include ./partials/_navbar.ejs%> 
+    <h1> Your Destination Profile: </h1>
+    <p>City: </p>
+    <p>Country: </p> 
+    <p>Rating: </p>
+    <p>Description: </p>
+        <form action="/#" method="POST">
+            <textarea rows="4" cols="50"></textarea>
+            <input type="submit" value="Share"> 
+        </form>    
+    <p>Visit Season: </p>
+
+    <p> Memory Lane:
+       <!-- Will try image upload module -->
+    <p>
     
+    <%-include ./partials/_footer.ejs%> 
 </body>
 </html>
