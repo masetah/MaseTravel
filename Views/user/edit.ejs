@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%-include ./partials/_head.ejs%> 
 <body>
-    
+
+ <%-include ./partials/_navbar.ejs%> 
+ 
+    <h1> Edit Your Profile </h1>
+        <form action="/users" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username"></p>
+        <label for="password">Password:</label>
+        <input type="password" name="password"></p>
+        <label for="favorite quote">Favorite Quote:</label>
+        <input type="text" name="quote"></p>
+        <label for="travel experience">Travel Experience:</label>
+        <input type="text" name="travelExperience"></p>
+        <label for="travel interests">Travel Interests:</label>
+        <input type="text" name="interests"></p>
+        <label for="bucket list">Bucket List:</label>
+        <input type="text" name="bucketList"></p>
+        <label for="hometown">Hometown:</label>
+        <input type="text" name="hometown"></p>
+
+        <input type="submit" value="Edit Your Profile">
+        </form>
+        <%-include ./partials/_footer.ejs%> 
 </body>
 </html>

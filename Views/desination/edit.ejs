@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%-include ./partials/_head.ejs%> 
 <body>
+ <%-include ./partials/_navbar.ejs%> 
+<h1> Edit Your Profile </h1>
+        <form action="/destination" method="POST">
+        <label for="city">City:</label>
+        <input type="text" name="city"></p>
+        <label for="country">Country:</label>
+        <input type="text" name="country"></p>
+        <label for="rating">Rating:</label>
+        <input type="text" name="rating"></p>
+        <label for="description">Description:</label>
+        <input type="text" name="description"></p>
+        <label for="visit season">Visit Season:</label>
+        <input type="text" name="visit season"></p>
     
+
+        <input type="submit" value="Edit Your Profile">
+        </form>
+   
+   <%-include ./partials/_footer.ejs%> 
 </body>
 </html>
