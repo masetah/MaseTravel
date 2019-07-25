@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include ./partials/_head.ejs%> 
+<%-include ../partials/_head.ejs%> 
 <body>
 
- <%-include ./partials/_navbar.ejs%> 
+ <%-include ../partials/_navbar.ejs%> 
  
     <h1> Edit Your Profile </h1>
-        <form action="/users" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username"></p>
+        <form action="/users/<%=users._id%>?_method=PUT" method="POST">
+        <label for="username">Username: </label>
+        <input type="text" name="username" value= <%=users.username%>></p>
         <label for="password">Password:</label>
-        <input type="password" name="password"></p>
+        <input type="password" name="password" value=<%=users.password%>></p>
         <label for="favorite quote">Favorite Quote:</label>
         <input type="text" name="quote"></p>
         <label for="travel experience">Travel Experience:</label>
@@ -24,6 +24,6 @@
 
         <input type="submit" value="Edit Your Profile">
         </form>
-        <%-include ./partials/_footer.ejs%> 
+        <%-include ../partials/_footer.ejs%> 
 </body>
 </html>
