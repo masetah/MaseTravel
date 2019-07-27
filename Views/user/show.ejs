@@ -4,12 +4,13 @@
 <body>
  <%-include ../partials/_navbar.ejs%> 
     <h1> Your Profile: </h1>
-    <p>Name: </p>
-    <p>Favorite Quote: </p> 
-    <p>Travel Experience: </p>
-    <p>Travel Interests: </p>
-    <p>Bucket List: </p>
-    <p>Hometown: </p>
+    <p>Name: <%=oneUser.username%> </p>
+    <p>Favorite Quote: <%=oneUser.quote%></p>
+    <p>Travel Experience: <%=oneUser.experienceLevel%></p>
+    <p>Travel Interests: <%=oneUser.interests%></p>
+    <p>Bucket List: <%=oneUser.bucketList%></p>
+    <p>Hometown: <%=oneUser.hometown%></p>
+    <button><a href="/users/<%=oneUser._id%>/edit">Edit</a></button>
     <%-include ../partials/_footer.ejs%> 
 </body>
 </html>
