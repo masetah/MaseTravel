@@ -3,11 +3,15 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require ('body-parser');
 const methodOverride = require("method-override");
+const bcrypt =require('bcryptjs');
 const mongoURI = 'mongodb://localhost:27017/' + 'TravelToo';
 const db = mongoose.connection;
 
+const destinationsController = require("./Controllers/destinationsController")
+const usersController =require('./Controllers/usersController');
+
 const User = require('./Models/Users');
-const Destination = require('./Models/Destinations');
+
 
 //middleware
 mongoose.connect(mongoURI, { useNewUrlParser: true}, () =>{
@@ -16,6 +20,8 @@ mongoose.connect(mongoURI, { useNewUrlParser: true}, () =>{
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
+//Use controller file in server.js
+app.use("/destinations", destinationsController)
 
 //errorlog
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -27,68 +33,22 @@ app.get("/", (req,res)=>{
     res.render('home.ejs');
   });
 
-//User Routes
-//NEW 
-app.get("/users/new", (req,res)=>{
-    res.render("user/new.ejs")
-});
-
-//CREATE
-app.post("/users", async(req,res)=>{
-  try{
-    const newUser = await User.create(req.body);
-    console.log(newUser)
-    res.redirect("/")
-  }catch(err){
-    res.send(err);
+//CREATE-Login
+app.post('/', async (req,res)=>{
+  console.log(req.body);
+  const userFromDb = await User.findOne({username: req.body.username});
+  const validatePW = bcrypt.compareSync(req.body.password,userFromDb.password);
+  console.log(userFromDb);
+  if(validatePW){
+      //req.session.userId = userFromDb;
+      res.redirect(`/users/${userFromDb._id}`)
+  }else{
+      console.log("bad login");
+      res.send("Your log in did not work please try again.")
   }
 })
 
-//SHOW ROUTE
-   app.get("/users/:id", async (req,res)=>{
-    const foundUser= await User.findById(req.params.id)
-    res.render('user/show.ejs',{
-      oneUser: foundUser
-    })
-  });
-
-//DELETE(Stretch to delete a profile)
-app.delete("/users/:id",(req,res)=>{
-    User.findByIdAndDelete({_id:req.params.id},(err,deletedUser)=>{
-      res.redirect('/users/new');
-      })
-  })
-
-//EDIT
-app.get("/users/:id/edit", async (req,res)=>{
-    const foundUser = await User.findById(req.params.id)
-      res.render('user/edit.ejs',{
-        oneUser: foundUser
-      })
-    });
-
-//PUT
-app.put("/users/:id", async (req, res)=>{
-  try{
-  const foundUser = await User.findByIdAndUpdate(req.params.id,req.body,{new:true});
-    res.redirect(`/users/${req.params.id}`)
-  }catch(err){
-    res.send(err);
-  }
-})
-
-//NEW 
-
-//CREATE
-
-//SHOW
-
-//DELETE
-
-//EDIT
-
-//PUT
-
+app.use("/users", usersController);
 
 //Local Host
 app.listen(3000, () => {

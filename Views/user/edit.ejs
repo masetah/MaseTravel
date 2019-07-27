@@ -6,23 +6,23 @@
  <%-include ../partials/_navbar.ejs%> 
  
     <h1> Edit Your Profile </h1>
-        <form action="/users/<%=users._id%>?_method=PUT" method="POST">
+        <form action="/users/<%=oneUser._id%>?_method=PUT" method="POST">
         <label for="username">Username: </label>
-        <input type="text" name="username" value= <%=users.username%>></p>
+        <input type="text" name="username" value="<%=oneUser.username%>">
         <label for="password">Password:</label>
-        <input type="password" name="password" value=<%=users.password%>></p>
-        <label for="favorite quote">Favorite Quote:</label>
-        <input type="text" name="quote"></p>
-        <label for="travel experience">Travel Experience:</label>
-        <input type="text" name="travelExperience"></p>
-        <label for="travel interests">Travel Interests:</label>
-        <input type="text" name="interests"></p>
-        <label for="bucket list">Bucket List:</label>
-        <input type="text" name="bucketList"></p>
-        <label for="hometown">Hometown:</label>
-        <input type="text" name="hometown"></p>
+        <input type="password" name="password" value="<%=oneUser.password%>"><br>
+        <label for="favorite quote">Favorite Quote:</label><br>
+        <input type="text" name="quote" value="<%=oneUser.quote%>"><br>
+        <label for="travel experience">Travel Experience:</label><br>
+        <input type="text" name="travelExperience" value="<%=oneUser.experienceLevel%>"><br>
+        <label for="travel interests">Travel Interests:</label><br>
+        <input type="text" name="interests" value="<%=oneUser.interests%>"><br>
+        <label for="bucket list">Bucket List:</label><br>
+        <input type="text" name="bucketList" value="<%=oneUser.bucketList%>"><br>
+        <label for="hometown">Hometown:</label><br>
+        <input type="text" name="hometown" value="<%=oneUser.hometown%>"><br>
 
-        <input type="submit" value="Edit Your Profile">
+        <input type="submit" value="Submit">
         </form>
         <%-include ../partials/_footer.ejs%> 
 </body>

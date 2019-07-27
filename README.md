@@ -4,7 +4,6 @@ Steps for Conflict-Free Git Collaboration
 1. One of the group members creates a repo. This repo should be completely independent of the class repo, and hosted on github.com. Add your other group members as **collaborators** by using the collaborators menu. There should be just ONE git repo for the whole project.
 
 1. Everyone clones a copy of the project onto their computer.
-<!-- This is great info -->
 1. WHENEVER you start working, start your work in your own branch with the command `git checkout -b your-branch-name-here`. Make sure you're inside of the project folder when you run this command.
 
 1. When you're done working and ready to push, do the following to make sure your version is synced up with any updates:
