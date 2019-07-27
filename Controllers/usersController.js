@@ -1,0 +1,72 @@
+const express = require('express');
+const router = express.Router();
+const User = require('../Models/Users');
+const bcrypt =require('bcryptjs');
+
+//User Routes
+//NEW 
+router.get("/new", (req,res)=>{
+    res.render("user/new.ejs")
+});
+
+//CREATE-New
+router.post("/", async(req,res)=>{
+  try{
+    const salt = bcrypt.genSaltSync();
+    req.body.password = bcrypt.hashSync(req.body.password, salt);
+    const newUser = await User.create(req.body);
+    console.log(newUser)
+    //req.session.userId = newUser._id;
+    res.redirect(`/users/${newUser._id}`)
+  }catch(err){
+    res.send(err);
+  }
+})
+
+//SHOW ROUTE
+   router.get("/:id", async (req,res)=>{
+    const foundUser= await User.findById(req.params.id)
+    res.render('user/show.ejs',{
+      oneUser: foundUser
+    })
+  });
+
+//DELETE(Stretch to delete a profile)
+router.delete("/:id",(req,res)=>{
+    User.findByIdAndDelete({_id:req.params.id},(err,deletedUser)=>{
+      res.redirect('/users/new');
+      })
+  })
+
+//EDIT
+router.get("/:id/edit", async (req,res)=>{
+    const foundUser = await User.findById(req.params.id)
+    console.log(foundUser)
+      res.render('user/edit.ejs',{
+        oneUser: foundUser
+      })
+    });
+
+//PUT
+router.put("/:id", async (req, res)=>{
+  try{
+  const foundUser = await User.findByIdAndUpdate(req.params.id,req.body,{new:true});
+    res.redirect(`/users/${foundUser._id}`)
+  }catch(err){
+    res.send(err);
+  }
+})
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+

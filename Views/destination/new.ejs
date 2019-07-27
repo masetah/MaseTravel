@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ../partials/_head.ejs%> 
+<body>
+ <%-include ../partials/_navbar.ejs%> 
+    <h1>Your Destinations</h1> 
+      <form action="/destinations" method="POST">
+        <label for="country">Country:</label>
+        <input type="text" name="country">
+        <label for="city">City:</label>
+        <input type="text" name="city">
+        <label for="rating">Rating:</label>
+        <input type="text" name="rating">
+        <label for="description">Description:</label>
+       <input type="text" name="description">
+       <label for="visitSeason">Visit Season:</label>
+       <input type="text" name="visitSeason">
+
+        <input type="submit" value="Submit">
+        </form>
+        <%-include ../partials/_footer.ejs%> 
+</body>
+</html>

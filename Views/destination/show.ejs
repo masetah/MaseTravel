@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ../partials/_head.ejs%> 
+<body>
+ <%-include ../partials/_navbar.ejs%> 
+    <h1> Your Destination Profile: </h1>
+    <p>City: <%=destinationsOnThePage.city%> </p>
+    <p>Country:<%=destinationsOnThePage.country%> </p> 
+    <p>Rating: <%=destinationsOnThePage.rating%> </p>
+    <p>Description: <%=destinationsOnThePage.description%></p>
+    <p>Visit Season:<%=destinationsOnThePage.visitSeason%> </p>
+
+    
+    <form action="/destinations/<%=destinationsOnThePage.id%>?_method=DELETE" method="POST">
+    <button type="submit" value="DELETE">Delete</button>
+    </form>
+
+   <button><a href="/destinations/<%=destinationsOnThePage._id%>/edit">Edit</button>
+        
+    <%-include ../partials/_footer.ejs%> 
+</body>
+</html>

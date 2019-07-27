@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%-include .../partials/_head.ejs%> 
 <body>
-    
+<%-include .../partials/_navbar.ejs%> 
+    <h1>Welcome to TravelToo</h1>
+    <div class ="logo">
+        <h1>Share your dream destinations, we'll share how to get there!</h1>
+
+    </div>
+    <div class ="register">
+    <button><a href="/users/new">Register</a></button>
+    <button><a href="/users/new">Login</a></button>
+   
+    </div>
+    <%-include .../partials/_footer.ejs%> 
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ../partials/_head.ejs%> 
+<style>
+a {
+  display: block;
+  padding: 8px;
+  background-color:;
+    display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ a:hover {
+  background-color: turquoise;
+ }
+</style>
+<body>
+<%-include ../partials/_navbar.ejs%> 
+    <h1>Destination Collection</h1>
+
+<!--Profile-->
+<h2>Past Travels</h2>
+<a href ="/destinations/show"></a>
+
+<!--Loop-->
+
+<table>
+       <tr>
+           <th>Travels Log</th>
+       </tr>
+            <%destinationsOnThePage.forEach(function(Destinations,index){%>
+       <tr>
+            <a href="/destinations/<%=Destinations._id%>"><%= Destinations.city%></a>
+       </tr>
+       <%})%>
+   </table>
+
+
+
+<br>
+<!--New-->
+<h2>Where to?</h2>
+<a href = "/destinations/new"> Next Stop</a>
+
+
+    <footer>
+    <%-include ../partials/_footer.ejs%> 
+    </footer>
+</body>
+</html>

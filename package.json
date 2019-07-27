@@ -3,23 +3,24 @@
   "version": "1.0.0",
   "description": "Steps for Conflict-Free Git Collaboration",
   "main": "server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.6.7"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
-    "express-session": "^1.16.2",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.6.5"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/masetah/TravelToo.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/masetah/TravelToo/issues"
   },

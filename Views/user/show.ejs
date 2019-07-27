@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%-include ../partials/_head.ejs%> 
 <body>
-    
+ <%-include ../partials/_navbar.ejs%> 
+    <h1> Your Profile: </h1>
+    <p>Name: <%=oneUser.username%> </p>
+    <p>Favorite Quote: <%=oneUser.quote%></p>
+    <p>Travel Experience: <%=oneUser.experienceLevel%></p>
+    <p>Travel Interests: <%=oneUser.interests%></p>
+    <p>Bucket List: <%=oneUser.bucketList%></p>
+    <p>Hometown: <%=oneUser.hometown%></p>
+    <button><a href="/users/<%=oneUser._id%>/edit">Edit</a></button>
+    <%-include ../partials/_footer.ejs%> 
 </body>
 </html>
