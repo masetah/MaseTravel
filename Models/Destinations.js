@@ -23,6 +23,10 @@ const destinationSchema = new Schema ({
     visitSeason: {
         type: String,
         required: true
+    },
+    region:{
+        type: String,
+        required: true
     }
 })
 
