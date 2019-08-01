@@ -33,6 +33,8 @@ a {
             <%destinationsOnThePage.forEach(function(Destinations,index){%>
        <tr>
             <a href="/destinations/<%=Destinations._id%>"><%= Destinations.city%></a>
+            <a href="/destinations/<%=Destinations._id%>"><%= Destinations.user%></a>
+
        </tr>
        <%})%>
    </table>
@@ -42,7 +44,7 @@ a {
 <br>
 <!--New-->
 <h2>Where to?</h2>
-<a href = "/destinations/new"> Next Stop</a>
+<a href = "/destinations/new"> Next </a>
 
 
     <footer>

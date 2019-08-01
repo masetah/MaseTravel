@@ -1,0 +1,90 @@
+
+
+body {
+    margin: 60px;
+    background: url("");
+    font-family: 'Montserrat Alternates', sans-serif;
+    word-wrap: break-word;
+
+  }
+
+
+  button{
+    padding: 0px;
+  }
+
+  .login{
+    left: 80%;
+    top: 65%;
+    margin-right: 50%;
+    position: fixed;
+    margin-top: -25%;
+    
+  }
+
+  .register{
+    left: 80%;
+    top: 95%;
+    margin-right: 30%;
+    position: fixed;
+    margin-top: -25%;
+  }
+
+.sidenav {
+  width: 500px;
+  position: -30 ;
+  z-index: 20;
+  top: 30px;
+  left: 10px;
+  background: white;
+ /* overflow-x: hidden; // made the box move when expanded */
+  padding: 50px 30px 30px 10px;
+  display: block;
+  
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+
+}
+
+.sidenav a:hover {
+  color: #064579;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+img {
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 120px;
+  height: 80px; 
+  display: flex;
+  
+}
+
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+}
+  .vaca{
+      width: 90%;
+      height: 80%;
+      display: flex;
+  }

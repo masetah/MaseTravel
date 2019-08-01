@@ -1,97 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
 
-body {
-  margin: 40px;
-  }
-
-  button{
-      padding: 0px;
-  }
-
-  .login{
-    left: 75%;
-    top: 60%;
-    margin-right: 25%;
-    position: fixed;
-    margin-top: -25%;
-  }
-
-  .register{
-    left: 75%;
-    top: 90%;
-    margin-right: 25%;
-    position: fixed;
-    margin-top: -25%;
-  }
-
-.sidenav {
-  width: 500px;
-  position: -30 ;
-  z-index: 20;
-  top: 20px;
-  left: 10px;
-  background: white;
-  overflow-x: hidden;
-  padding: 8px 20;
-}
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #2196F3;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #064579;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-img {
-  border: 1px solid #ddd; 
-  border-radius: 4px; 
-  padding: 5px; 
-  width: 120px;
-  height: 80px; 
-  
-}
-
-
-img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-
-.box{
-  float: left;
-  width: 18%;
-  padding: 10px;
-  position: relative;
-}
-  .vaca{
-      width: 90%;
-      height: 80%;
-      display: flex;
-  }
-
-</style>
-
+<head>
+<%include ./partials/_head.ejs%>
+</head>
 
 <body>
-<%-include ./partials/_head.ejs%>
-
 <nav>
  <%-include ./partials/_navbar.ejs%>
 </nav>
 
-<aside>
 
+
+<main class="container">
+<div class="container">
+<aside>
 <div class="login">
     <h3>Sign in</h3>
    <form action="/" method="POST">
@@ -189,6 +112,9 @@ img:hover {
   <img src= "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2018/09/1862/1048/cancun20istock.jpg?ve=1&tl=1" alt="CanCun">
 </a></div>
 </div>
+
+</main>
+
 
 <footer>
     <%-include ./partials/_footer.ejs%> 

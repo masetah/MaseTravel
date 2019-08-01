@@ -17,7 +17,7 @@ const User = require('./Models/Users');
 mongoose.connect(mongoURI, { useNewUrlParser: true}, () =>{
     console.log("The connection works")
 });
-
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 //Use controller file in server.js
