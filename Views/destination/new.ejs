@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include ./partials/_head.ejs%> 
+<%-include ../partials/_head.ejs%> 
 <body>
- <%-include ./partials/_navbar.ejs%> 
+<div class="container">
+ <%-include ../partials/_navbar.ejs%> 
     <h1>Your Destinations</h1> 
-      <form action="/destination" method="POST">
+      <form action="/destinations" method="POST">
+        <label for="region">Region:</label>
+        <input type="text" name="region">
         <label for="country">Country:</label>
         <input type="text" name="country">
         <label for="city">City:</label>
-        <input type="text" name="city">
-        <label for="rating">Rating:</label>
-        <input type="text" name="rating">
-        <label for="description">Description:</label>
-       <input type="text" name="description">
-       <label for="visit season">Visit Season:</label>
-       <input type="text" name="visit season">
+        <input type="text" name="city"><br>
+
+          <div class="form-group">
+    <label for="rating">Rating:</label>
+    <input type="range" class="form-control-range" name="rating">
+  </div>
+        <label for="description">Tell us about your trip:</label>
+        <textarea class="form-control" type="text" name="description" rows="3"></textarea>
+        <label for="visitSeason">Visit Season:</label>
+        <input type="text" name="visitSeason">
 
         <input type="submit" value="Submit">
-        </form>
-        <%-include ./partials/_footer.ejs%> 
+      </form>
+        <%-include ../partials/_footer.ejs%> 
+</div>
 </body>
 </html>

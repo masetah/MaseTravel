@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
 <%-include ../partials/_head.ejs%> 
 <body>
+<div class="container">
+<div class=navbar>
+    <%-include ../partials/_navbar.ejs%>
+</div>
 
-<%-include ../partials/_navbar.ejs%> 
-    <h1> Register Here: </h1>
-    
+<div class=headline>
+    <h1>You be the Travel Guide!</h1>
+    <p>Create a profile below so that you can submit your travel experiences to the world!</p>
+</div>
+<div class=form>
     <form action="/users" method="POST">
         <label for="username">Username </label><br>
         <input type="text" name="username"></p>
@@ -24,6 +28,10 @@
 
         <input type="submit" value="Submit">
         </form>
-        <%-include ../partials/_footer.ejs%> 
+</div>
+<div class=footer>
+        <%-include ../partials/_footer.ejs%>
+</div>
+</div> 
 </body>
 </html>

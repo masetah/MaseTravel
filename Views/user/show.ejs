@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
 <%-include ../partials/_head.ejs%> 
 <body>
- <%-include ../partials/_navbar.ejs%> 
+<div class="container">
+ <%-include ../partials/_navbar.ejs%>
+
     <h1> Your Profile: </h1>
-    <p>Name: <%=oneUser.username%> </p>
-    <p>Favorite Quote: <%=oneUser.quote%></p>
-    <p>Travel Experience: <%=oneUser.experienceLevel%></p>
-    <p>Travel Interests: <%=oneUser.interests%></p>
-    <p>Bucket List: <%=oneUser.bucketList%></p>
-    <p>Hometown: <%=oneUser.hometown%></p>
+
+    <div class="name"> 
+        <h3>User Name</h3>
+        <p><%=oneUser.username%></p>
+    </div>
+
+    <div class="quote"> 
+        <h3>Favorite Quote</h3> 
+        <p><%=oneUser.quote%></p>
+    </div>
+
+    <div class="travelExperience">
+        <h3>Travel Experience</h3>  
+        <p><%=oneUser.experienceLevel%></p>
+    </div>
+    <div class="interests">
+        <h3>Travel Interests</h3>
+        <p><%=oneUser.interests%></p>
+    </div>
+
+    <div class = "bucketList">
+        <h3>Bucket List</h3>  
+        <p><%=oneUser.bucketList%></p>
+    </div>
+
+    <div class="hometown">
+        <h3>Hometown</h3>  
+        <p><%=oneUser.hometown%></p>
+    </div>
     <button><a href="/users/<%=oneUser._id%>/edit">Edit</a></button>
-    <%-include ../partials/_footer.ejs%> 
+    <%-include ../partials/_footer.ejs%>
+</div>
 </body>
 </html>
