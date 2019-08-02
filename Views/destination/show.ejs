@@ -5,10 +5,10 @@
  <%-include ../partials/_navbar.ejs%> 
     <h1> Your Destination Profile: </h1>
     <p>City: <%=destinationsOnThePage.city%> </p>
-    <p>Country:<%=destinationsOnThePage.country%> </p> 
+    <p>Country: <%=destinationsOnThePage.country%> </p> 
     <p>Rating: <%=destinationsOnThePage.rating%> </p>
     <p>Description: <%=destinationsOnThePage.description%></p>
-    <p>Visit Season:<%=destinationsOnThePage.visitSeason%> </p>
+    <p>Visit Season: <%=destinationsOnThePage.visitSeason%> </p>
 
     
     <form action="/destinations/<%=destinationsOnThePage.id%>?_method=DELETE" method="POST">

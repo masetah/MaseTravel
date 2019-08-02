@@ -1,29 +1,178 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<%-include ../partials/_head.ejs%> 
+<html>
+<head>
+
+<!-- MAIN CSS -->
+
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color: white
+  ;
+  padding: 2px;
+  margin: 20px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  margin: 20px;
+}
+
+
+
+
+
+
+img {
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+</style>
+
+
+
+
+</head>
 <body>
 
-<%-include ../partials/_navbar.ejs%> 
-    <h1> Register Here: </h1>
-    
-    <form action="/users" method="POST">
-        <label for="username">Username </label><br>
+<div class="grid-container">
+  <div class="item1">
+
+  <%-include ../partials/_head.ejs%>
+
+<nav>
+ <%-include ../partials/_navbar.ejs%>
+</nav>
+  </div>
+
+  <div class="item3">Menu
+  <aside>
+<div class="register">
+    <h3>Register Here</h3>
+   <form action="/users" method="POST">
+        <label for="username">Username </label>
         <input type="text" name="username"></p>
-        <label for="password">Password </label><br>
+        <label for="password">Password </label>
         <input type="password" name="password"></p>
-        <label for="quote"> Favorite Quote </label><br>
+        <label for="quote"> Favorite Quote </label>
         <input type="text" name="quote"></p>
-        <label for="experienceLevel"> Travel Expreience Level </label><br>
+
+
+<div class="dropdown">
+     <form action="/users" method="POST">
+        <label for="experienceLevel">Travel Experience Level </label>
         <input type="text" name="experienceLevel"></p>
-        <label for="interests"> Travel Interests </label><br>
+    <div class="dropdown-content">
+        <a href="#">No Travel Experience</a>
+        <a href="#">Beginner</a>
+        <a href="#">Intermediate</a>
+        <a href="#">Advanced</a>
+        <a href="#">Competitive Globetrotter</a>
+</div>
+        <label for="interests"> Travel Interests </label>
         <input type="text" name="interests"></p>
-        <label for="bucketList"> Travel Bucket List </label><br>
+        <label for="bucketList"> Travel Bucket List </label>
         <input type="text" name="bucketList"></p>
-        <label for="hometown"> Your Hometown </label><br>
+        <label for="hometown"> Your Hometown </label>
         <input type="text" name="hometown"></p>
 
         <input type="submit" value="Submit">
         </form>
-        <%-include ../partials/_footer.ejs%> 
+</div>
+
+
+  
+</div>  
+
+
+
+
+
+  </div>
+
+
+
+
+  <div class="item5">Footer
+
+  </div>
+</div>
+
 </body>
 </html>
+

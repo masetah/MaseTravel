@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<!-- MAIN CSS -->
+
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color: white
+  ;
+  padding: 2px;
+  margin: 20px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  margin: 20px;
+}
+
+
+
+
+
+
+img {
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+}
+
+</style>
+
+
+<body>
+
+<div class="grid-container">
+    <div class="item1">
+
+<%-include ../partials/_head.ejs%> 
+
+<nav>
+<%-include ../partials/_navbar.ejs%> 
+</nav>
+    </div>
+
+  <div class="item2">Menu
+  <aside>
+  <div class="register">
+
+    <h1> Register Here </h1> 
+    <form action="/users" method="POST">
+        <label for="username">Username </label><br>
+        <input type="text" name="username"></p>
+        <label for="password">Password </label><br>
+        <input type="password" name="password"></p>
+        <label for="quote"> Favorite Quote </label><br>
+        <input type="text" name="quote"></p>
+        <label for="experienceLevel"> Travel Experience Level </label><br>
+        <input type="text" name="experienceLevel"></p>
+        <label for="interests"> Travel Interests </label><br>
+        <input type="text" name="interests"></p>
+        <label for="bucketList"> Travel Bucket List </label><br>
+        <input type="text" name="bucketList"></p>
+        <label for="hometown"> Your Hometown </label><br>
+        <input type="text" name="hometown"></p>
+
+        <input type="submit" value="Submit">
+        </form>
+
+
+<div class="grid-container">
+  <div class="item1">Header
+  </div>
+  <div class="item2">Menu</div>
+  <div class="item3">Main</div>  
+  <div class="item4">Right</div>
+  <div class="item5">Footer</div>
+</div>
+
+        <%-include ../partials/_footer.ejs%> 
+</body>
+</html>
+
+
+
+Travel Experience Form (cut out from users new page):
+
+        <label for="experienceLevel"> Travel Experience Level </label>
+        <input type="text" name="experienceLevel"></p>

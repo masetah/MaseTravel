@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <%-include ../partials/_head.ejs%> 
-<style>
-a {
-  display: block;
-  padding: 8px;
-  background-color:;
-    display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
- a:hover {
-  background-color: turquoise;
- }
-</style>
 <body>
+<nav>
 <%-include ../partials/_navbar.ejs%> 
+</nav>
+
+
     <h1>Destination Collection</h1>
 
 <!--Profile-->
@@ -42,8 +31,8 @@ a {
 <br>
 <!--New-->
 <h2>Where to?</h2>
-<a href = "/destinations/new"> Next Stop</a>
 
+<a href = "/destinations/new"> Next </a>
 
     <footer>
     <%-include ../partials/_footer.ejs%> 
