@@ -35,7 +35,7 @@
 
 
 #user{
-    padding: 25px 25px 25px 25px;
+    padding: 25px 25px 25px 25px;rs
     background-color: #E0F7FA ;
 }
 
@@ -93,10 +93,10 @@ body{
 </div>
 
 
-<div class="item2">Menu
+<div class="item2">
     <h1> Edit Your Profile </h1>
  </div>
- <div class="item3">Main
+ <div class="item3">
         <form action="/users/<%=oneUser._id%>?_method=PUT" method="POST">
         <div id="user">
         <label for="username">Username: </label>
@@ -123,7 +123,7 @@ body{
         <input type="text" name="bucketList" value="<%=oneUser.bucketList%>"><br>
         </div>
          <div id="home">
-        <label for="hometown">Hometown:</label><br>
+        <label for="hometown">Your Hometown:</label><br>
         <input type="text" name="hometown" value="<%=oneUser.hometown%>"><br>
         </div>
            <div id="submit">

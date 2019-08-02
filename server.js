@@ -51,7 +51,7 @@ app.post('/', async (req,res)=>{
 app.use("/users", usersController);
 
 //Local Host
-app.listen(3001, () => {
+app.listen(3000, () => {
     console.log('-Travelers Unite-');
 });
 

@@ -34,7 +34,45 @@
 }
 
 
+#user{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
 
+#password{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
+
+#quote{
+    padding: 25px 25px 25px 25px;
+      background-color: #B2EBF2;
+}
+
+#experience{
+    padding: 25px 25px 25px 25px;
+    background-color: #80DEEA;
+   
+}
+
+#interests{
+    padding: 25px 25px 25px 25px;
+    background-color: #4DD0E1;
+}
+
+#bucket{
+    padding: 25px 25px 25px 25px;
+       background-color: #26C6DA;
+}
+
+#home{
+    padding: 25px 25px 25px 25px;
+    background-color: #00BCD4;
+}
+#submit{
+    padding: 25px 25px 25px 25px;
+    
+}
 
 
 
@@ -103,8 +141,6 @@ body{
 </style>
 
 
-
-
 </head>
 <body>
 
@@ -118,19 +154,24 @@ body{
 </nav>
   </div>
 
-  <div class="item3">Main
-  <aside>
-<div class="register">
-    <h3>Register Here</h3>
+  <div class="item2">
+    <h1>Register Here</h1>
+    </div>
+<div class="item3">
    <form action="/users" method="POST">
+   <div id="user">
         <label for="username">Username </label>
         <input type="text" name="username"></p>
+        </div>
+        <div id="password">
         <label for="password">Password </label>
         <input type="password" name="password"></p>
+        </div>
+        <div id="quote">
         <label for="quote"> Favorite Quote </label>
         <input type="text" name="quote"></p>
-
-
+        </div>
+<div id="experience">
 <div class="dropdown">
      <form action="/users" method="POST">
         <label for="experienceLevel">Travel Experience Level </label>
@@ -142,35 +183,30 @@ body{
         <a href="#">Advanced</a>
         <a href="#">Competitive Globetrotter</a>
 </div>
+    <div id="interests">
         <label for="interests"> Travel Interests </label>
         <input type="text" name="interests"></p>
+        </div>
+        <div id="bucket">
         <label for="bucketList"> Travel Bucket List </label>
         <input type="text" name="bucketList"></p>
+        </div>
+        <div id="home">
         <label for="hometown"> Your Hometown </label>
         <input type="text" name="hometown"></p>
-
+        </div>
+      <div id="submit">
         <input type="submit" value="Submit">
+        </div>
         </form>
-</div>
-
-<div class="grid-container">
-  <div class="item2">
-  <img src= "https://www.worldatlas.com/r/w728-h425-c728x425/upload/1a/0e/cc/shutterstock-360405194.jpg" alt="Nepal">
 </div>
   
 </div>  
 
-
-
-
-
   </div>
 
-
-
-
   <div class="item5">Footer
-
+   <%-include ../partials/_footer.ejs%> 
   </div>
 </div>
 

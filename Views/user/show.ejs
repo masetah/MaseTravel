@@ -32,6 +32,42 @@
   margin: 20px;
 }
 
+
+#user{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
+
+#quote{
+    padding: 25px 25px 25px 25px;
+      background-color: #B2EBF2;
+}
+
+#experience{
+    padding: 25px 25px 25px 25px;
+    background-color: #80DEEA;
+   
+}
+
+#interests{
+    padding: 25px 25px 25px 25px;
+    background-color: #4DD0E1;
+}
+
+#bucket{
+    padding: 25px 25px 25px 25px;
+       background-color: #26C6DA;
+}
+
+#home{
+    padding: 25px 25px 25px 25px;
+    background-color: #00BCD4;
+}
+#edit{
+    padding: 25px 25px 25px 25px;
+    
+}
+
 body{
     background-image: url("https://i.imgur.com/4Gl6XpE.jpg")
 }
@@ -51,16 +87,33 @@ body{
 </nav>
 </div>
 
-<div class="item3">Main
-    <div class="profile">
+<div class="item2">
     <h1>Your Profile</h1>
+    </div>
+    <div class="item3">
+     <div id="user">
     <p>Name: <%=oneUser.username%> </p>
+    </div>
+     <div id="quote">
     <p>Favorite Quote: <%=oneUser.quote%></p>
+    </div>
+     <div id="experience">
     <p>Travel Experience: <%=oneUser.experienceLevel%></p>
+    </div>
+     <div id="interests">
     <p>Travel Interests: <%=oneUser.interests%></p>
+    </div>
+     <div id="bucket">
     <p>Bucket List: <%=oneUser.bucketList%></p>
+    <div>
+     <div id="home">
     <p>Hometown: <%=oneUser.hometown%></p>
+    </div>
+     <div id="edit">
     <button><a href="/users/<%=oneUser._id%>/edit">Edit</a></button>
-    <%-include ../partials/_footer.ejs%> 
+    </div>
+   
+</div>
+  
 </body>
 </html>
