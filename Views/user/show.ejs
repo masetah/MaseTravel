@@ -1,9 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include ../partials/_head.ejs%> 
+<head>
+
+<!-- MAIN CSS -->
+
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color: white
+  ;
+  padding: 2px;
+  margin: 20px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  margin: 20px;
+}
+
+body{
+    background-image: url("https://i.imgur.com/4Gl6XpE.jpg")
+}
+</style>
+
+</head>
+
 <body>
- <%-include ../partials/_navbar.ejs%> 
-    <h1> Your Profile: </h1>
+
+
+<div class="grid-container">
+    <div class="item1">
+<%-include ../partials/_head.ejs%> 
+
+<nav>
+ <%-include ../partials/_navbar.ejs%>
+</nav>
+</div>
+
+<div class="item3">Main
+    <div class="profile">
+    <h1>Your Profile</h1>
     <p>Name: <%=oneUser.username%> </p>
     <p>Favorite Quote: <%=oneUser.quote%></p>
     <p>Travel Experience: <%=oneUser.experienceLevel%></p>

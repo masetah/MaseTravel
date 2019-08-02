@@ -1,29 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include ../partials/_head.ejs%> 
+<head>
+
+<!-- MAIN CSS -->
+
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color: white
+  ;
+  padding: 2px;
+  margin: 20px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  margin: 20px;
+}
+
+
+
+#user{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
+
+#password{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
+
+#quote{
+    padding: 25px 25px 25px 25px;
+      background-color: #B2EBF2;
+}
+
+#experience{
+    padding: 25px 25px 25px 25px;
+    background-color: #80DEEA;
+   
+}
+
+#interests{
+    padding: 25px 25px 25px 25px;
+    background-color: #4DD0E1;
+}
+
+#bucket{
+    padding: 25px 25px 25px 25px;
+       background-color: #26C6DA;
+}
+
+#home{
+    padding: 25px 25px 25px 25px;
+    background-color: #00BCD4;
+}
+#submit{
+    padding: 25px 25px 25px 25px;
+    
+}
+
+body{
+    background-image: url("https://i.imgur.com/4Gl6XpE.jpg")
+}
+</style>
+
+</head>
 <body>
 
+<div class="grid-container">
+
+    <div class="item1">
+<%-include ../partials/_head.ejs%> 
+
+<nav>
  <%-include ../partials/_navbar.ejs%> 
- 
+</nav>
+</div>
+
+
+<div class="item2">Menu
     <h1> Edit Your Profile </h1>
+ </div>
+ <div class="item3">Main
         <form action="/users/<%=oneUser._id%>?_method=PUT" method="POST">
+        <div id="user">
         <label for="username">Username: </label>
-        <input type="text" name="username" value="<%=oneUser.username%>">
+        <input type="text" name="username" value="<%=oneUser.username%>"><br>
+        </div>
+         <div id="password">
         <label for="password">Password:</label>
         <input type="password" name="password" value="<%=oneUser.password%>"><br>
+         </div>
+          <div id="quote">
         <label for="favorite quote">Favorite Quote:</label><br>
         <input type="text" name="quote" value="<%=oneUser.quote%>"><br>
+        </div>
+        <div id="experience">
         <label for="travel experience">Travel Experience:</label><br>
         <input type="text" name="travelExperience" value="<%=oneUser.experienceLevel%>"><br>
+        </div>
+        <div id="interests">
         <label for="travel interests">Travel Interests:</label><br>
         <input type="text" name="interests" value="<%=oneUser.interests%>"><br>
+        </div>
+        <div id="bucket">
         <label for="bucket list">Bucket List:</label><br>
         <input type="text" name="bucketList" value="<%=oneUser.bucketList%>"><br>
+        </div>
+         <div id="home">
         <label for="hometown">Hometown:</label><br>
         <input type="text" name="hometown" value="<%=oneUser.hometown%>"><br>
-
+        </div>
+           <div id="submit">
         <input type="submit" value="Submit">
+        </div>
         </form>
+
+ </div>
+ <div class="item5">Footer
         <%-include ../partials/_footer.ejs%> 
+</div>
+
 </body>
 </html>
