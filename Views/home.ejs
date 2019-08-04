@@ -1,88 +1,14 @@
-
 <!DOCTYPE html>
 <html>
-<head>
+<%-include ./partials/_head.ejs%>
 
-<!-- MAIN CSS -->
-
-<style>
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer footer footer';
-  grid-gap: 1px;
-  background-color: white
-  ;
-  padding: 2px;
-  margin: 20px;
-}
-
-.grid-container > div {
-  background-color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 20px;
-  margin: 20px;
-}
-
-
-
-
-
-
-img {
-  border: 1px solid #ddd; 
-  border-radius: 4px; 
-  padding: 5px; 
-  width: 70px;
-  height: 40px; 
-  display: flex;
-}
-
-
-img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
-
-
-.box{
-  float: left;
-  width: 18%;
-  padding: 10px;
-  position: relative;
-}
-
-body{
-    background-image: url("https://i.imgur.com/4Gl6XpE.jpg")
-}
-</style>
-
-
-
-
-</head>
 <body>
-
 <div class="grid-container">
-  <div class="item1">
-
-  <%-include ./partials/_head.ejs%>
-
-<nav>
- <%-include ./partials/_navbar.ejs%>
-</nav>
-  </div>
 
   <div class="item2">Menu
   <aside>
+
+<aside>
 <div class="login">
     <h3>Sign in</h3>
    <form action="/" method="POST">
@@ -96,7 +22,6 @@ body{
         </form>
     </div>
 
-
     <div class ="register">
         <h3> Registered?</h3>
         <button><a href ="/users/new">Register</a></button>
@@ -109,28 +34,38 @@ body{
 <div class="sidenav">
 <h2>Share your Destinations</h2>
  <h5> <p>Allow us to take you on a journey to places you have dreamt of.
-    Share spectacular images and stories of your most incredible getaways.
-    No journey is left behind in the confines of your memory. 
-    Let us store all of your most treasured possessions for you.
-    Allow your experiences take off on to an amazing destination.
-    I you haven't registered yet, sign up see where you can TRAVEL TOO</p> </h5>
+    Share spectacular images and stories of your most incredible getaways. </p></h5>
+</div>
+
+<div class="main">
+ <img src="https://travelandleisureindia.in/wp-content/uploads/2019/04/Feature-image-Huawei.jpg" class="travelimg">
+</div>
+
+  <h5><p>No journey is left behind in the confines of your memory. 
+    Let us store all of your most treasured possessions for you.</p></h5>
+
+<div class="main">
+ <img src="http://www.mytravelmoney.co.uk/articles/wp-content/uploads/2012/08/11.png" class="travelimg">
 </div>
 
 
+  <h5><p>Allow your experiences take off on to an amazing destination.
+    I you haven't registered yet, sign up see where you can TRAVEL TOO</p></h5>
 
+<div class="main">
+ <img src="http://footloosedev.com/wp-content/uploads/2018/10/travel-photography-tips.jpg" class="travelimg">
+</div>
 
-  
   </div>  
 
-
-
-
-  <div class="item4">Right
-  
-<h2> Read up on your Next Stop </h2>
+<div class="item4">Right
+            
+            
 
 <div class="vaca">
+<h2> Read up on your Next Stop </h2>
 <div class="box">
+
 <a target="" href="https://www.lonelyplanet.com/usa/new-york-city">
   <img src= "https://cdn.vox-cdn.com/thumbor/MPx1hLxIk0bRrMCXMUz1o8jgT8k=/0x0:3759x2515/1820x1213/filters:focal(1580x958:2180x1558):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/58145329/shutterstock_54497056.0.jpg" alt="New York">
 </a></div>
@@ -149,12 +84,10 @@ body{
 </div>
 </div>
 
-
-<h2> Find and Share your next trip </h2>
-
-
+                     
 
 <div class="vaca">
+ <h2> Share your next trip </h2>
 <div class="box">
 <a target="" href="https://www.lonelyplanet.com/nepal">
   <img src= "https://www.worldatlas.com/r/w728-h425-c728x425/upload/1a/0e/cc/shutterstock-360405194.jpg" alt="Nepal">
@@ -173,7 +106,7 @@ body{
 </a></div>
 </div>
 
-                        <h2> Find More Destinations </h2> 
+      <h2> More Destinations </h2> 
 
 <div class="vaca">
 <div class="box">
@@ -194,22 +127,16 @@ body{
 </a></div>
 </div>
 
-
-
   </div>
 
 
 
 
   <div class="item5">Footer
-
+    <%-include ./partials/_footer.ejs%> 
   </div>
 </div>
 
+
 </body>
 </html>
-
-
-
-
-

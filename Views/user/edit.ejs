@@ -102,18 +102,41 @@ body{
         <label for="username">Username: </label>
         <input type="text" name="username" value="<%=oneUser.username%>"><br>
         </div>
-         <div id="password">
-        <label for="password">Password:</label>
-        <input type="password" name="password" value="<%=oneUser.password%>"><br>
-         </div>
           <div id="quote">
         <label for="favorite quote">Favorite Quote:</label><br>
         <input type="text" name="quote" value="<%=oneUser.quote%>"><br>
         </div>
         <div id="experience">
         <label for="travel experience">Travel Experience:</label><br>
-        <input type="text" name="travelExperience" value="<%=oneUser.experienceLevel%>"><br>
-        </div>
+          <div class="form-check">
+  <input class="form-check-input" type="radio" name="experienceLevel" value="No Travel Experience" checked>
+  <label class="form-check-label" for="experienceLevel">
+   No Travel Experience
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="experienceLevel"  value="Beginner">
+  <label class="form-check-label" for="experienceLevel">
+   Beginner
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="experienceLevel" value="Intermediate">
+  <label class="form-check-label" for="experienceLevel">
+    Intermediate
+  </label>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="experienceLevel"  value="Advanced">
+  <label class="form-check-label" for="experienceLevel">
+Advanced
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="experienceLevel"  value="Competitive Globetrotter">
+  <label class="form-check-label" for="experienceLevel">
+Competitive Globetrotter
+  </label>
+</div>
         <div id="interests">
         <label for="travel interests">Travel Interests:</label><br>
         <input type="text" name="interests" value="<%=oneUser.interests%>"><br>

@@ -5,8 +5,6 @@
 <nav>
 <%-include ../partials/_navbar.ejs%> 
 </nav>
-
-
     <h1>Destination Collection</h1>
 
 <!--Profile-->
@@ -22,6 +20,8 @@
             <%destinationsOnThePage.forEach(function(Destinations,index){%>
        <tr>
             <a href="/destinations/<%=Destinations._id%>"><%= Destinations.city%></a>
+            <a href="/destinations/<%=Destinations._id%>"><%= Destinations.user%></a>
+
        </tr>
        <%})%>
    </table>
@@ -31,6 +31,10 @@
 <br>
 <!--New-->
 <h2>Where to?</h2>
+<<<<<<< HEAD
+=======
+<a href = "/destinations/new"> Next </a>
+>>>>>>> e3d51f9436d40005d6d717acb28abe313eb83d92
 
 <a href = "/destinations/new"> Next </a>
 

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <%-include ../partials/_head.ejs%> 
+
 <body>
 <nav>
  <%-include ../partials/_navbar.ejs%> 
  </nav>
 
-<h1> Edit Your Profile </h1>
+ <div id="edit h1">
+        <h1> Edit Your Profile </h1>
+</div>
         <form action="/destinations/<%=destinationsOnThePage.id%>?_method=PUT" method="POST">
         <label for="city">City:</label>
         <input type="text" name="city" value="<%=destinationsOnThePage.city%>"></p>
-
         <label for="country">Country:</label>
         <input type="text" name="country" value="<%=destinationsOnThePage.country%>"></p>
 
@@ -24,37 +25,6 @@
         <label for="description">Description:</label>
         <input type="text" name="description" value="<%=destinationsOnThePage.description%>"></p>
         
-        <label for="visitSeason">Visit Season:</label>
-        <input type="text" name="visitSeason" value="<%=destinationsOnThePage.visitSeason%>"></p>
-    
-        <input type="submit" value="Update">
-        </form>
-
-
-
-
-
-
-
-
-
- <style>
- 
- 
- 
- </style>
- <div id="edit h1">
-        <h1> Edit Your Profile </h1>
-</div>
-        <form action="/destinations/<%=destinationsOnThePage.id%>?_method=PUT" method="POST">
-        <label for="city">City:</label>
-        <input type="text" name="city" value="<%=destinationsOnThePage.city%>"></p>
-        <label for="country">Country:</label>
-        <input type="text" name="country" value="<%=destinationsOnThePage.country%>"></p>
-        <label for="rating">Rating:</label>
-        <input type="text" name="rating" value="<%=destinationsOnThePage.rating%>"></p>
-        <label for="description">Description:</label>
-        <input type="text" name="description" value="<%=destinationsOnThePage.description%>"></p>
         <label for="visitSeason">Visit Season:</label>
         <input type="text" name="visitSeason" value="<%=destinationsOnThePage.visitSeason%>"></p>
     
