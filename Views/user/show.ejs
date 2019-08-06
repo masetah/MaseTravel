@@ -1,32 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-
-<%-include ../partials/_head.ejs%> 
-<nav>
- <%-include ../partials/_navbar.ejs%>
-</nav>
-
 <style>
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+
+.faders{
+padding-top:10px;
+padding-bottom:50px;
+}
+
+.paders{
+padding-top:100px;
+padding-bottom:40px;
+}
+/* Site Updates */
+input{
+  height: 25px;
+  width: 230px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
 </style>
 
-<div class="grid-container">
-    <div class="item1">
+<body>
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<%-include ../partials/_navbar.ejs%>
 
+  <!-- Body Division Padding -->
+  <div class=" travelco Travcenter paders" style="max-width:600px">
+    </div>
 </div>
 
-
-<div class="item2">
-    <h1>Your Profile</h1>
-    </div>
-
-    <div class="item3">
-
-     <div id="user">
-    <p>Name: <%=oneUser.username%> </p>
-    </div>
+  <!-- The Profile View -->
+  <div class="bpad">
+    <div class=" travelco faders" style="max-width:800px">
+      <h1 class="Travcenter">Welcome <%=oneUser.username%> </h1>
+      <p class=" Travcenter"><i>
+    
      <div id="quote">
-    <p>Favorite Quote: <%=oneUser.quote%></p>
+    <p>Favorite Quote: <%=oneUser.quote%><p>
     </div>
      <div id="experience">
     <p>Travel Experience: <%=oneUser.experienceLevel%></p>
@@ -42,9 +96,24 @@
     </div>
      <div id="edit">
     <button><a href="/users/<%=oneUser._id%>/edit">Edit</a></button>
+    </div></i></p><br>
+        </div>
+      </div>
     </div>
-   
-</div>
+  </div>
+
+
+  <!-- The Travel Outro Section -->
+  <div class=" travelco paders" style="max-width:800px">
+    <h2 class=" Travcenter">Travel Too</h2>
+    <p class=" Travcenter"><i>Collect your Memories!</i></p>
+  </div>
   
+
+<!-- Footer -->
+<footer class="paders">
+  <%-include ../partials/_footer.ejs%>
+</footer>
+
 </body>
 </html>

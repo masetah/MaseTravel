@@ -29,12 +29,19 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use("/users", usersController);
-app.use("/destinations", destinationsController)
+app.use("/destinations", destinationsController);
+//universal variable
+app.use((req, res, next)=>{
+  res.locals.currentUser = req.session.userId
+  next();
+})
 
 //errorlog
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', mongoURI));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
+
 
 //Homepage
 app.get("/", (req,res)=>{
@@ -44,26 +51,24 @@ app.get("/", (req,res)=>{
 //delete session
 app.delete("/logout", (req,res)=>{
 req.session.destroy()
-console.log(req.session)
+//console.log(req.session)
 res.redirect("/")
 })
 
 //CREATE-Login
 app.post('/', async (req,res)=>{
-  console.log(req.body);
+  //console.log(req.body);
   try{  
     const userFromDb = await User.findOne({username: req.body.username});
-    console.log(userFromDb)
+    //console.log(userFromDb)
     const passwordValid =bcrypt.compareSync(req.body.password,userFromDb.password)
     if(passwordValid){
       req.session.userId = userFromDb._id
-      console.log(req.session)
+      //console.log(req.session)
       res.redirect(`/users/${userFromDb._id}`)
   }else{
       res.send("bad login")
   }
-  //const validatePW = bcrypt.compareSync(req.body.password,userFromDb.password);
-  //if(validatePW){
   }catch(err){
       res.send(err)
   }

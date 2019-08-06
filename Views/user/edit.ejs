@@ -1,163 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-<!-- MAIN CSS -->
 
 <style>
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer footer footer';
-  grid-gap: 1px;
-  background-color: white
-  ;
-  padding: 2px;
-  margin: 20px;
+html{box-sizing:border-box;
+overflow-x:hidden;
 }
 
-.grid-container > div {
-  background-color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 20px;
-  margin: 20px;
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
 }
 
-
-
-#user{
-    padding: 25px 25px 25px 25px;rs
-    background-color: #E0F7FA ;
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
 }
-
-#password{
-    padding: 25px 25px 25px 25px;
-    background-color: #E0F7FA ;
+.travelco{
+max-width:980px
 }
+.TravelAuto{
+max-width:1000px
+}}
 
-#quote{
-    padding: 25px 25px 25px 25px;
-      background-color: #B2EBF2;
+.Travcenter
+{text-align:center;
 }
-
-#experience{
-    padding: 25px 25px 25px 25px;
-    background-color: #80DEEA;
+.paders{
+padding-top:40px;
+padding-bottom:40px;
+}
+/* Site Updates */
+input{
+  float: right;
    
 }
 
-#interests{
-    padding: 25px 25px 25px 25px;
-    background-color: #4DD0E1;
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
 }
 
-#bucket{
-    padding: 25px 25px 25px 25px;
-       background-color: #26C6DA;
+img {
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 400px;
+  height: 250px; 
+  display: flex;
 }
 
-#home{
-    padding: 25px 25px 25px 25px;
-    background-color: #00BCD4;
-}
-#submit{
-    padding: 25px 25px 25px 25px;
-    
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-body{
-    background-image: url("https://i.imgur.com/4Gl6XpE.jpg")
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;  
+  width: 70px;
+  height: 40px; 
+  display: flex;
 }
 </style>
 
-</head>
 <body>
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<%-include ../partials/_navbar.ejs%>
 
-<div class="grid-container">
-
-    <div class="item1">
-<%-include ../partials/_head.ejs%> 
-
-<nav>
- <%-include ../partials/_navbar.ejs%> 
-</nav>
+<!-- Body Div -->
+  <div class=" travelco Travcenter paders" style="max-width:600px">
+    <h1>Edit your Profile Here</h1></div>
 </div>
 
-
-<div class="item2">
-    <h1> Edit Your Profile </h1>
- </div>
- <div class="item3">
-        <form action="/users/<%=oneUser._id%>?_method=PUT" method="POST">
-        <div id="user">
-        <label for="username">Username: </label>
-        <input type="text" name="username" value="<%=oneUser.username%>"><br>
-        </div>
-          <div id="quote">
-        <label for="favorite quote">Favorite Quote:</label><br>
+  <!-- The color squareSection -->
+  <div class="bpad">
+    <div class=" travelco paders" style="max-width:800px">
+      <h3 class="Travcenter">Please Complete</h3>
+      <p class="Travcenter"><i>
+      
+      <table>
+      <form action="/users/<%=oneUser._id%>?_method=PUT" method="POST">
+      <label for="username">Username: </label><br>
+      <input type="text" name="username" value="<%=oneUser.username%>"><br>
+      </div>
+        <label for="favorite quote">Inspirational Travel Quote:</label><br>
         <input type="text" name="quote" value="<%=oneUser.quote%>"><br>
         </div>
-        <div id="experience">
-        <label for="travel experience">Travel Experience:</label><br>
-          <div class="form-check">
+      </table></i></p><br>
+
+    <p class=" Travcenter"><i><div id="experience">
+    <div class="dropdown">
+     <form action="/users" method="POST">
+        <label for="experienceLevel">Travel Experience Level </label>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="experienceLevel" value="No Travel Experience" checked>
+  <label for="travel experience">Travel Experience:</label><br>
+  <div class="form-check">
   <input class="form-check-input" type="radio" name="experienceLevel" value="No Travel Experience" checked>
   <label class="form-check-label" for="experienceLevel">
    No Travel Experience
   </label>
-</div>
-<div class="form-check">
+  </div>
+  
+  <div class="form-check">
   <input class="form-check-input" type="radio" name="experienceLevel"  value="Beginner">
   <label class="form-check-label" for="experienceLevel">
    Beginner
   </label>
-</div>
-<div class="form-check">
+  </div>
+
+  <div class="form-check">
   <input class="form-check-input" type="radio" name="experienceLevel" value="Intermediate">
   <label class="form-check-label" for="experienceLevel">
     Intermediate
   </label>
+  </div>
+
   <div class="form-check">
   <input class="form-check-input" type="radio" name="experienceLevel"  value="Advanced">
   <label class="form-check-label" for="experienceLevel">
-Advanced
+  Advanced
   </label>
-</div>
+  </div>
+
 <div class="form-check">
   <input class="form-check-input" type="radio" name="experienceLevel"  value="Competitive Globetrotter">
   <label class="form-check-label" for="experienceLevel">
-Competitive Globetrotter
+  Competitive Globetrotter
   </label>
-</div>
-        <div id="interests">
-        <label for="travel interests">Travel Interests:</label><br>
+  </div>
+
+<form></i></p><br>
+<p class=" Travcenter"><i>
+    <form>
+      <div>
+        <label for="travel interests">Desired Travel Destination:</label><br>
         <input type="text" name="interests" value="<%=oneUser.interests%>"><br>
-        </div>
-        <div id="bucket">
+
         <label for="bucket list">Bucket List:</label><br>
         <input type="text" name="bucketList" value="<%=oneUser.bucketList%>"><br>
-        </div>
-         <div id="home">
+
         <label for="hometown">Your Hometown:</label><br>
         <input type="text" name="hometown" value="<%=oneUser.hometown%>"><br>
-        </div>
-           <div id="submit">
-        <input type="submit" value="Submit">
-        </div>
-        </form>
 
- </div>
- <div class="item5">Footer
-        <%-include ../partials/_footer.ejs%> 
+      <input type="submit" value="Submit">
+    </div>
+
+  </form></i></p><br>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+  <!-- The Travel Outro Section -->
+  <div class=" travelco paders" style="max-width:800px">
+    <h2 class=" Travcenter">Travel Too</h2>
+    <p class="Travcenter"><i>Collect your Memories!</i></p>
+  </div>
+  </div>
+  </div>
+
+
+
+<!-- Footer -->
+<footer class="paders">
+  <%-include ../partials/_footer.ejs%>
+</footer>
 
 </body>
 </html>
