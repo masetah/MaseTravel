@@ -7,9 +7,9 @@ Since the new millennium the intense desire to travel has grown exponentially. M
 
 - Site is an open platform for users to share past experiences in their travels. Other users are able to reference travel ratings and opinions when planning future travels.
 
-- New user visits the site and is able to click on the destinations, see ratings, and read descriptions without logging in
+- New user visits the site and is able to click on the destinations, see ratings, and read descriptions without logging in.
 
-- User that is coming back from a trip will register and fill out a profile form, once they’ve completed the form they’re able to create a new destination and give us the information about their trip and submit to the site. 
+- User returning from a trip will register and fill out a profile form. Once they’ve completed the form they will then create a new destination and add information about their trip to the site. 
 
 ## Approaches Taken
  
