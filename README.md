@@ -17,7 +17,7 @@ Since the new millennium the intense desire to travel has grown exponentially. M
 - Began the routing process in the server.js file and eventually divided our application into Models, Views, and Controller files to address separation of concerns and make debugging more efficient
 - Used template files to render data and used forms to accept user input
 - Utilized mongo shell to create and use two Mongoose schemas
-- Used middleware functions to get in the middle of our requests (and…)
+- Used middleware functions
 - Added bootstrap navigation bar as a partial, also added head and footer partials 
 - Refactored mongoose queries with async/await syntax to make promises easier to work with
 - Added sessions to express to track user activity
