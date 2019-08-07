@@ -12,7 +12,6 @@ font-size:20px;
 line-height:1.5
 }
 
-
 @media 
 (min-width:601px){
 .travelco,
@@ -87,9 +86,9 @@ img:hover {
 <body>
 <!-- Page content -->
 <div class="cont" style="max-width:2000px;margin-top:46px">
-<nav class="navi">
-                <ul>              
-                    <a href="/destinations">Destinations</a>                 
+<nav class="navi">             
+                    <a href="/destinations">Destinations</a>                  
+                    <a href="/">HOME</a>
             </nav>
 
   <!-- The Body  Section -->
@@ -104,71 +103,62 @@ img:hover {
     <div class="travelco paders" style="max-width:800px">
       <h3 class="Travcenter">Please Complete</h3>
       <p class="Travcenter"><i><form action="/users" method="POST">
-   <div id="user">
+      <div id="user">
         <label for="username">Username </label>
         <input type="text" name="username">
-        </div>
+        </div><br>
         <div id="password">
         <label for="password">Password </label>
         <input type="password" name="password">
-        </div>
-</form></i></p><br>
-
+        </div><br>
+         <label for="quote"> What is your favorite quote? </label>
+        <textarea type= "text" rows="4" cols="100" name="quote">
+        </textarea></p>
+     
       <p class=" Travcenter"><i><div id="experience">
+
+
 <div class="dropdown">
      <form action="/users" method="POST">
-        <label for="experienceLevel">Travel Experience Level </label>
+     <label for="experienceLevel"><h4>What is your current travel experience?</h4> </label>
 
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="experienceLevel" value="No Travel Experience" checked>
-  <label class="form-check-label" for="experienceLevel">
-   No Travel Experience
-  </label>
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel" value="No Travel Experience" checked>
+       <label class="form-check-label" for="experienceLevel">No Travel Experience</label></div>
+  
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel"  value="Beginner">
+       <label class="form-check-label" for="experienceLevel">Beginner</label></div>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel" value="Intermediate">
+       <label class="form-check-label" for="experienceLevel">Intermediate</label></div>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel"  value="Advanced">
+       <label class="form-check-label" for="experienceLevel">Advanced</label></div>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel"  value="Competitive Globetrotter">
+       <label class="form-check-label" for="experienceLevel">Competitive Globetrotter</label></div>
+      <form></i></p><br>
   </div>
 
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="experienceLevel"  value="Beginner">
-  <label class="form-check-label" for="experienceLevel">
-   Beginner
-  </label>
-</div>
-
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="experienceLevel" value="Intermediate">
-  <label class="form-check-label" for="experienceLevel">
-    Intermediate
-  </label>
-  </div>
-
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="experienceLevel"  value="Advanced">
-  <label class="form-check-label" for="experienceLevel">
-Advanced
-  </label>
-  </div>
-
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="experienceLevel"  value="Competitive Globetrotter">
-  <label class="form-check-label" for="experienceLevel">
-Competitive Globetrotter
-  </label>
-  </div>
-
-
-<form></i></p><br>
 <p class=" Travcenter"><i>
     <div id="interests">
-        <label for="interests"> Travel Interests </label>
-        <input type="text" name="interests"></p>
+        <label for="interests"> What are some of your travel interests? </label>
+        <textarea type= "text" rows="8" cols="100" name="interests">
+        </textarea></p>
       </div>
 
       <div id="bucket">
-        <label for="bucketList"> Travel Bucket List </label>
-        <input type="text" name="bucketList"></p>
+        <label for="bucketList"> What is on your travel bucket list? </label>
+        <textarea type= "text" rows="8" cols="100" name="bucketList">
+        </textarea></p>
       </div>
 
       <div id="home">
-        <label for="hometown"> Your Hometown </label>
+        <label for="hometown"> What is your hometown? </label>
         <input type="text" name="hometown"></p>
       </div>
 
@@ -182,6 +172,7 @@ Competitive Globetrotter
     </div>
   </div>
 
+
   <!-- The Travel Outro Section -->
   <div class=" travelco paders" style="max-width:800px">
     <h2 class="Travcenter">Travel Too</h2>
@@ -192,8 +183,6 @@ Competitive Globetrotter
 <footer class="paders">
 
   <%-include ../partials/_footer.ejs%>
-      <%# <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Black_Man_Traveling_with_Luggage_Cartoon_Vector.svg/1280px-Black_Man_Traveling_with_Luggage_Cartoon_Vector.svg.png"> %>
-    <%# <img src="http://www.pngall.com/wp-content/uploads/2/Travel-PNG-Images.png"> %>
 
 </footer>
 
