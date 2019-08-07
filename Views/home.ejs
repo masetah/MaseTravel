@@ -1,123 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-<%include ./partials/_head.ejs%>
-</head>
+<style>
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+.paders{
+padding-top:40px;
+padding-bottom:40px;
+}
+/* Site Updates */
+input{
+  height: 25px;
+  width: 230px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
+</style>
 
 <body>
-<nav>
- <%-include ./partials/_navbar.ejs%>
-</nav>
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<%-include ./partials/_navbar.ejs%>
 
-
-
-<main class="container">
-<div class="container">
-<aside>
-<div class="login">
-    <h3>Sign in</h3>
+  <!-- The Login Section -->
+  <div class=" travelco Travcenter paders" style="max-width:600px">
+    <h1>Travel Too</h1>
+    <aside>
+  <div class="login">
+    <h2>Sign in</h2>
    <form action="/" method="POST">
         <label for="username"></label>
-        <input type="text" name="username" placeholder="Username"></p>
+        <input type="text" name="username" placeholder="Username"></i>
 
         <label for="password"></label>
-        <input type="password" name="password" placeholder="Password"></p>
-
+        <input type="password" name="password" placeholder="Password"></i>
+        <br>
         <input type="submit" value="Login">
         </form>
     </div>
 
-
     <div class ="register">
-        <h3> Registered?</h3>
+        <h2> Registered?</h2>
         <button><a href ="/users/new">Register</a></button>
     </div>
 </aside>
 
-
-<div class="sidenav">
-<h2>Share your Destinations</h2>
-  <p>Allow us to take you on a journey to places you have dreamt of.</p>
-  <p>Share spectacular images and stories of your most incredible getaways.</p>
-  <p>No journey is left behind in the confines of your memory. 
-    Let us store all of your most treasured possessions for you.</p>
-    <p>Allow your experiences take off on to an amazing destination.
-    I you haven't registered yet, sign up see where you can TRAVEL TOO</p>
+    </div>
 </div>
 
-            <h2> Read up on your Next Stop </h2>
+  <!-- The Description Section -->
+  <div class="bpad">
+    <div class="travelco paders" style="max-width:800px">
+      <h2 class="Travcenter">Share Your Destinations</h2>
+      <p class=" Travcenter"><i>Allow us to take you on a journey to places you've only dreamt of.
+    Share spectacular images and stories of your most incredible getaways.</i></p><br>
 
-<div class="vaca">
-<div class="box">
+      <p class=" Travcenter"><i>No journey is left behind in the confines of your memory. 
+    Let us store all of your most treasured possessions for you.</i></p><br>
 
-<a target="" href="https://www.lonelyplanet.com/usa/new-york-city">
-  <img src= "https://cdn.vox-cdn.com/thumbor/MPx1hLxIk0bRrMCXMUz1o8jgT8k=/0x0:3759x2515/1820x1213/filters:focal(1580x958:2180x1558):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/58145329/shutterstock_54497056.0.jpg" alt="New York">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/england/london">
-  <img src= "https://4brf13430svm3bnu053zbxvg-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/Ultimate-Travel-Guide-to-London-1020x472.jpg" alt="London">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/japan/tokyo">
-  <img src= "https://dwgfmnrdprofc.cloudfront.net/wp-content/uploads/2017/11/sensoji-tokyo.jpg" alt="Tokyo">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/australia">
-  <img src= "https://prospects-ac-uk.cdn.prismic.io/prospects-ac-uk/b6ea84179668f1383bce034fadcf6b05092f77ef_work-in-australia-1.jpg" alt="Australia">
-</a>
-</div>
-</div>
-
-                      <h2> Find and Share your next trip </h2>
+    </div>
+  </div>
 
 
-
-<div class="vaca">
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/nepal">
-  <img src= "https://www.worldatlas.com/r/w728-h425-c728x425/upload/1a/0e/cc/shutterstock-360405194.jpg" alt="Nepal">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/russia/moscow">
-  <img src= "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Russia/Moscow/moscow-night-guide-lead.jpg?imwidth=1400" alt="Moscow">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/cuba">
-  <img src= "https://www.gooverseas.com/sites/default/files/styles/640x425_scale_crop/public/image-collections/2019-03-13/augustin-de-montesquiou-346174-unsplash.jpg?itok=fB529UiZ" alt="Cuba">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/canada/nova-scotia">
-  <img src= "https://assets3.thrillist.com/v1/image/1810198/size/tl-full_width_tall_c_2x.jpg" alt="Nova Scotia">
-</a></div>
-</div>
-
-                        <h2> Find More Destinations </h2> 
-
-<div class="vaca">
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/usa/alaska">
-  <img src= "https://www.fodors.com/wp-content/uploads/2019/02/04_Ultimate_Alaska_NorthernLights_dreamstime_l_57315404-975x650.jpg" alt="Alaska">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/philippines">
-  <img src= "https://www.wonderfly.asia/uploads/cities/89a8936c57b0ed53535f577c66271941.jpg" alt="Philippines">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/france">
-  <img src= "https://i0.wp.com/lisapowers.ca/wp-content/uploads/France-small-640x480.jpg?resize=640%2C480" alt="France">
-</a></div>
-<div class="box">
-<a target="" href="https://www.lonelyplanet.com/mexico/cancun">
-  <img src= "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2018/09/1862/1048/cancun20istock.jpg?ve=1&tl=1" alt="CanCun">
-</a></div>
-</div>
-
-</main>
+  <!-- The Travel Outro Section -->
+  <div class=" travelco paders" style="max-width:800px">
+    <h2 class=" Travcenter">Travel Too</h2>
+    <p class=" Travcenter"><i>Collect your Memories!</i></p>
+  </div>
+  
 
 
-<footer>
-    <%-include ./partials/_footer.ejs%> 
+<!-- Footer -->
+<footer class="paders">
+  <%-include ./partials/_footer.ejs%>
 </footer>
+
 </body>
 </html>

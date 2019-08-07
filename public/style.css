@@ -1,4 +1,167 @@
 
+/*
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'right right main main main menu'
+    'footer footer footer footer footer menu';
+  grid-gap: 1px;
+  padding: 2px;
+  margin: 100px;
+}
+
+.grid-container > div { 
+  background-color: hsla(16, 59%, 70%, 0.623); 
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  margin: 5px;
+}
+
+h1 h2 h3{
+  text-align: center;
+  position: fixed;
+}
+
+.travelimg{
+  width: 500px;
+  height: 250px; 
+  position: relative;
+  display: flex;
+}
+
+p{
+  padding: 10px 50px 50px 50px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+}
+
+
+#user{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
+
+#password{
+    padding: 25px 25px 25px 25px;
+    background-color: #E0F7FA ;
+}
+
+#quote{
+    padding: 25px 25px 25px 25px;
+      background-color: #B2EBF2;
+}
+
+#experience{
+    padding: 25px 25px 25px 25px;
+    background-color: #80DEEA;
+   
+}
+
+#interests{
+    padding: 25px 25px 25px 25px;
+    background-color: #4DD0E1;
+}
+
+#bucket{
+    padding: 25px 25px 25px 25px;
+       background-color: #26C6DA;
+}
+
+#home{
+    padding: 25px 25px 25px 25px;
+    background-color: #5B515C;
+}
+#submit{
+    padding: 25px 25px 25px 25px;
+    
+}
+
+
+
+img {
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;  
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  text-align: center;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+body{
+    background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+
+    background-size: cover;
+}
+
+
+// PREVIOUS CSS 
+
 
 body {
     margin: 60px;
@@ -37,7 +200,6 @@ body {
   top: 30px;
   left: 10px;
   background: white;
- /* overflow-x: hidden; // made the box move when expanded */
   padding: 50px 30px 30px 10px;
   display: block;
   
@@ -88,3 +250,4 @@ img:hover {
       height: 80%;
       display: flex;
   }
+*/

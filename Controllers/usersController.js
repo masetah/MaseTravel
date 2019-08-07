@@ -6,8 +6,9 @@ const bcrypt =require('bcryptjs');
 //User Routes
 //NEW 
 router.get("/new", (req,res)=>{
-    res.render("user/new.ejs")
+  res.render("user/new.ejs")
 });
+
 
 //CREATE-New
 router.post("/", async(req,res)=>{
@@ -15,8 +16,7 @@ router.post("/", async(req,res)=>{
     const salt = bcrypt.genSaltSync();
     req.body.password = bcrypt.hashSync(req.body.password, salt);
     const newUser = await User.create(req.body);
-    console.log(newUser)
-    //req.session.userId = newUser._id;
+    req.session.userId = newUser._id;
     res.redirect(`/users/${newUser._id}`)
   }catch(err){
     res.send(err);
@@ -25,10 +25,15 @@ router.post("/", async(req,res)=>{
 
 //SHOW ROUTE
    router.get("/:id", async (req,res)=>{
+    try{
+    console.log(`a visit coming in from ${req.session.userId}`)
     const foundUser= await User.findById(req.params.id)
     res.render('user/show.ejs',{
       oneUser: foundUser
     })
+  }catch(err){
+    res.send(err);
+  }
   });
 
 //DELETE(Stretch to delete a profile)
@@ -50,7 +55,7 @@ router.get("/:id/edit", async (req,res)=>{
 //PUT
 router.put("/:id", async (req, res)=>{
   try{
-  const foundUser = await User.findByIdAndUpdate(req.params.id,req.body,{new:true});
+    const foundUser = await User.findByIdAndUpdate(req.params.id,req.body,{new:true});
     res.redirect(`/users/${foundUser._id}`)
   }catch(err){
     res.send(err);

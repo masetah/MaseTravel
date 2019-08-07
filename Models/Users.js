@@ -24,7 +24,8 @@ const userSchema = new Schema ({
     },
     experienceLevel: {
         type: String
-    }
+    },
+    hometown: String
 })
 
 const User = mongoose.model('User', userSchema);

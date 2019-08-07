@@ -1,35 +1,28 @@
 <style>
-li {
-  float:left;
-  margin-right: 15px;
-  display: inline;
-}
-a {
-  display: block;
-  padding: 8px;
-  background-color:;
-}
-li a:hover {
-  background-color: turquoise;
-}
-li a {
-  display: block;
-  color: black;
+
+.navi a {
+  float: left;
+  color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
+  font-size: 17px;
+}
+
+.right {
+  float: right;
 }
 </style>
 
-<nav>
+<nav class="navi">
                 <ul>
             
-                    <li class="left"><a href="/">Profile</a></li>                   
-                    <li class="left"><a href="/destinations">Destinations</a></li>                   
-                    <li class="left"><a href="/destinations/new">Submit Destinations</a></li>                  
-                    <li class="left"><a href="/">Log Out</a></li>
+                    <a href="/">Profile</a>               
+                    <a href="/destinations">Destinations</a>                  
+                    <a href="/destinations/new">Submit Destinations</a> 
+                      
+                    <div class="right">             
+                    <a href="/">Log Out</a>
+                    
                 </ul>
 
             </nav>
-    
-
