@@ -11,15 +11,21 @@ router.get("/new", (req,res)=>{
 });
 
 //CREATE User
-router.post("/new", async(req,res)=>{
+router.post("/", async(req,res)=>{
   try{
     const salt = bcrypt.genSaltSync();
-    req.body.password = bcrypt.hashSync(req.body.password, salt);
+    console.log(req.body)
+    console.log("============")
+    console.log(req.body.password)
+    console.log("============")
+    req.body.password = bcrypt.hashSync(req.body.password, salt); 
     const newUser = await User.create(req.body);
     console.log(newUser)
     req.session.userId = newUser._id;
+    currentUser= req.session.userId
     res.redirect(`/users/${newUser._id}`)
   }catch(err){
+    console.log(err)
     res.send(err);
   }
 })
@@ -28,8 +34,8 @@ router.post("/new", async(req,res)=>{
    router.get("/:id", async (req,res)=>{
     try{
     currentUser= req.session.userId
-    //console.log(currentUser)
     const foundUser= await User.findById(req.params.id)
+    console.log(currentUser)
     res.render('user/show.ejs',{
       oneUser: foundUser
     })
@@ -66,15 +72,3 @@ router.put("/:id", async (req, res)=>{
 })
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-

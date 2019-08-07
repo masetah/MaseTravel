@@ -30,11 +30,7 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use("/users", usersController);
 app.use("/destinations", destinationsController);
-//universal variable
-app.use((req, res, next)=>{
-  res.locals.currentUser = req.session.userId
-  next();
-})
+
 
 //errorlog
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
