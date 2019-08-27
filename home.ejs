@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+
+<style>
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+.paders{
+padding-top:40px;
+padding-bottom:40px;
+}
+/* Site Updates */
+input{
+  height: 25px;
+  width: 230px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
+
+.navi a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+</style>
+
 <body>
-    
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+
+
+  <nav class="navi">          
+      <a href="/destinations">Destinations</a>                 
+  </nav>
+
+  <!-- The Login Section -->
+  <div class=" travelco Travcenter paders" style="max-width:600px">
+    <h1>Travel Too</h1>
+    <aside>
+  <div class="login">
+    <h2>Sign in</h2>
+   <form action="/" method="POST">
+        <label for="username"></label>
+        <input type="text" name="username" placeholder="Username"></i>
+
+        <label for="password"></label>
+        <input type="password" name="password" placeholder="Password"></i>
+        <br>
+        <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <div class ="register">
+        <h2> Registered?</h2>
+        <button><a href ="/users/new">Register</a></button>
+    </div>
+</aside>
+
+    </div>
+</div>
+
+  <!-- The Description Section -->
+  <div class="bpad">
+    <div class="travelco paders" style="max-width:800px">
+      <h2 class="Travcenter">Share Your Destinations</h2>
+      <p class=" Travcenter"><i>Allow us to take you on a journey to places you've only dreamt of.
+    Share spectacular images and stories of your most incredible getaways.</i></p><br>
+
+      <p class=" Travcenter"><i>No journey is left behind in the confines of your memory. 
+    Let us store all of your most treasured possessions for you.</i></p><br>
+
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="paders">
+  <%-include ./partials/_footer.ejs%>
+</footer>
+
 </body>
 </html>

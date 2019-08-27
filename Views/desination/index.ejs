@@ -1,12 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%-include ../partials/_head.ejs%>
+<style>
+
+
+.flip-card {
+  background-color: transparent;
+  width: 120px;
+  height: 100px;
+  perspective: 1000px;
+  position: relative;
+  float: left;
+  display: inline;
+  padding: 20px 30px 20px 40px;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: hsla(25, 70%, 80%, 0.623); 
+  color: black;
+  text-align:center;  
+  border-radius: 2px; 
+}
+
+.flip-card-back {
+  background-color: hsla(30, 80%, 50%, 0.623); 
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 2px; 
+}
+
+#pic{
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 200px;
+  height: 250px; 
+  display: flex;
+}
+
+
+#bag{
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 200px;
+  height: 150px; 
+  display: flex;
+}
+
+
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+.paders{
+padding-top:40px;
+padding-bottom:400px;
+}
+
+.faders{
+padding-top:40px;
+padding-bottom:10px;
+}
+
+
+input{
+  float: right;
+   
+}
+
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
+
+img {
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 400px;
+  height: 250px; 
+  display: flex;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;  
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+</style>
+
 <body>
-    
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<%-include ../partials/_navbar.ejs%>
+
+  <!-- The collection Section -->
+  <div class=" travelco Travcenter faders" style="max-width:600px" >
+    <h1>Destination Collection</h1>
+    </div>
+</div>
+
+  <!-- The color square Section -->
+  <div class="bpad" >
+    <div class=" travelco paders" style="max-width:800px; margin-bottom:200px">
+      <h3 class="Travcenter"></h3>
+      <p class=" Travcenter"><i> 
+
+<!--Profile-->
+<h2>Flip and Click for More!</h2>
+
+<!--Loop-->
+<%destinationsOnThePage.forEach(function(Destinations,index){%>
+
+
+ <!--Card Div-->       
+<div class="flip-card">
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+        <a href="/destinations/<%=Destinations._id%>"><%=Destinations.city%>, <%=Destinations.country%></a>
+   </div>
+
+    <div class="flip-card-back">
+            <a href="/destinations/<%=Destinations._id%>"><%= Destinations.rating%></a>
+    </div>
+  </div>
+</div>
+<%})%>
+
+</i></p><br>
+  </div>
+  </div>
+
+<!-- Footer -->
+<footer class="faders">
+  <%-include ../partials/_footer.ejs%>
+</footer>
 </body>
 </html>
