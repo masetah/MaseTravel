@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include ./partials/_head.ejs%> 
-<body>
-<div class="container">
-<%-include ./partials/_navbar.ejs%> 
+
     <h1> Login Here </h1>
-    <form action="/users/login" method="POST">
+    <form action="/" method="POST">
         <label for="username"> Username: </label>
         <input type="text" name="username">
         <label for="password"> Password: </label> 
@@ -13,6 +10,5 @@
         <input type="submit" value="Login">
         </form>
         <%-include ./partials/_footer.ejs%> 
-</div>
 </body>
 </html>

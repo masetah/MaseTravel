@@ -1,51 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <%-include ../partials/_head.ejs%> 
+<%-include ../partials/_head.ejs%>
+
+<style>
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+.paders{
+padding-top:40px;
+padding-bottom:40px;
+}
+
+input{
+  display: inline;
+  float:right;
+}
+
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
+
+img {
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 400px;
+  height: 250px; 
+  display: flex;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;  
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+</style>
 
 <body>
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<%-include ../partials/_navbar.ejs%>
 
-<div class="grid-container">
+  <!-- The Record Section -->
+  <div class="travelco Travcenter paders" style="max-width:600px" >
+    <h1>Record Your Trips</h1>
+    </div>
+</div>
 
-  <div class="item1"></div>
-  <div class="item2"></div>
+  <!-- The Color Square Section -->
+  <div class="bpad" >
+    <div class=" travelco paders" style="max-width:800px">
+      <h3 class="Travcenter">Save a Memory Here</h3>
+      <p class=" Travcenter"><i>
 
-<%-include ../partials/_navbar.ejs%> 
+      <div class="container">
+    <form action="/destinations" method="POST">  
 
+       
+    
+      <div id="region">
+        <h3>Select a Continent</h3>
+        </div>
+       <div class="form-check">
+  <input class="form-check-input" type="radio" name="region" value="North America" checked>
+  <label class="form-check-label" for="region">
+   North America
+  </label>
+  </div>
 
-  <div class="item3">   <h1>Your Destinations</h1> 
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="region"  value="South America">
+  <label class="form-check-label" for="region">
+   South America
+  </label>
+</div>
 
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="region" value="Antartica">
+  <label class="form-check-label" for="region">
+   Antarctica
+  </label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="region"  value="Europe">
+  <label class="form-check-label" for="region">
+    Europe
+  </label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="region"  value="Asia">
+  <label class="form-check-label" for="region">
+    Asia
+  </label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="region"  value="Africa">
+  <label class="form-check-label" for="region">
+    Africa
+  </label>
+  </div>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="region"  value="Australia">
+  <label class="form-check-label" for="region">
+    Australia
+  </label>
+  </div>
+    
+
+      <div id="city">
+      
+        <label for="city"><h3>City</h3></label>
+        <input type="text" name="city">
+        </div>
+
+              <div id="country">
+              <h3>Country</h3>
+        <label for="country"></label>
+        <input type="text" name="country">
+        </div>
+
+      <div id="rating">
+      <h3>Rating</h3>
+        <label for="rating"></label>
+        <div class="form-check">
+        </div>
+
+  <input class="form-check-input" type="radio" name="rating" value=5>
+  <label class="form-check-label" for="rating">
+   5
+  </label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="rating"  value=4>
+  <label class="form-check-label" for="rating">
+    4
+  </label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="rating"  value=3>
+  <label class="form-check-label" for="rating">
+    3
+  </label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="rating"  value=2>
+  <label class="form-check-label" for="rating">
+    2
+  </label>
+  </div>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="rating"  value=1>
+  <label class="form-check-label" for="rating">
+   1
+  </label>
+  </div>
+
+        <div id="description">
+        <h3>Tell us about your trip</h3>
+        <label for="description"></label>
+       <textarea type= "text" rows="8" cols="100" name="description">
+        </textarea>
+       </div>
+
+       <div id="season">
+       <h3>When did you go on your trip?</h3>
+       <label for="visitSeason"></label>
+       </div>
+  
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="visitSeason"  value="Fall">
+  <label class="form-check-label" for="visitSeason">
+   Fall
+
+  </label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="visitSeason"  value="Winter">
+  <label class="form-check-label" for="visitSeason">
+    Winter
+  </label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="visitSeason"  value="Spring">
+  <label class="form-check-label" for="visitSeason">
+   Spring
+  </label>
+  </div>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="visitSeason"  value="Summer">
+  <label class="form-check-label" for="visitSeason">
+   Summer
+  </label>
+  </div>
+
+      
+        <input type="submit" value="Submit" class="registerbtn">
+        </form>
+      </div>
+
+    </i></p><br>
+  </div>
+  </div>
   
 
-      <form action="/destinations" method="POST">
-        <label for="country">Country:</label>
-        <input type="text" name="country">
 
-        <label for="city">City:</label>
-        <input type="text" name="city">
-
-        <label for="rating">Rating:</label>
-        <input type="text" name="rating">
-
-        <label for="description">Description:</label>
-       <input type="text" name="description">
-       
-       <label for="visitSeason">Visit Season:</label>
-       <input type="text" name="visitSeason">
-
-        <input type="submit" value="Submit">
-        </form>
-
-  </div>  
-  </div>  
-
-  <div class="item4"></div>
-
-  <div class="item5">
-      <%-include ../partials/_footer.ejs%> 
+  <!-- The Travel Outro Section -->
+  <div class=" travelco paders" style="max-width:800px">
+    <h2 class=" Travcenter">Travel Too</h2>
+    <p class=" Travcenter"><i>Collect your Memories!</i></p>
   </div>
-</div>
+  
+
+
+<!-- Footer -->
+<footer class="paders">
+
+  <%-include ../partials/_footer.ejs%>
+
+</footer>
 
 </body>
 </html>
-

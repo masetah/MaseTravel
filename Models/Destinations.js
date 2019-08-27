@@ -2,10 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema ({
-    region: {
-        type: String,
-        required: true
-    },
     city: {
         type: String,
         required: true
@@ -16,7 +12,7 @@ const destinationSchema = new Schema ({
     },
     rating: {
         type: Number,
-        max: 100,
+        max: 5,
         min: 1,
         required: true
     },
@@ -31,7 +27,7 @@ const destinationSchema = new Schema ({
     region:{
         type: String,
         required: true
-    }, 
+    },
     user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

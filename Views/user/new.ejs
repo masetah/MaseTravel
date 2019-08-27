@@ -1,36 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include ../partials/_head.ejs%> 
-<body>
-<div class="container">
- <%-include ../partials/_navbar.ejs%> 
-<div class=headline>
-    <h1>You be the Travel Guide!</h1>
-    <p>Create a profile below so that you can submit your travel experiences to the world!</p>
-</div>
-<div class=form>
-    <form action="/users" method="POST">
-        <label for="username">Username </label><br>
-        <input type="text" name="username"></p>
-        <label for="password">Password </label><br>
-        <input type="password" name="password"></p>
-        <label for="quote"> Favorite Quote </label><br>
-        <input type="text" name="quote"></p>
-        <label for="experienceLevel"> Travel Expreience Level </label><br>
-        <input type="text" name="experienceLevel"></p>
-        <label for="interests"> Travel Interests </label><br>
-        <input type="text" name="interests"></p>
-        <label for="bucketList"> Travel Bucket List </label><br>
-        <input type="text" name="bucketList"></p>
-        <label for="hometown"> Your Hometown </label><br>
-        <input type="text" name="hometown"></p>
 
+<style>
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+.paders{
+padding-top:40px;
+padding-bottom:40px;
+}
+/* Site Updates */
+input{
+  float: right;
+}
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
+
+img {
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 400px;
+  height: 250px; 
+  display: flex;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;  
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+.navi a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+</style>
+
+<body>
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<nav class="navi">             
+                    <a href="/destinations">Destinations</a>                  
+                    <a href="/">HOME</a>
+            </nav>
+
+  <!-- The Body  Section -->
+  <div class=" travelco Travcenter paders" style="max-width:600px">
+
+    <h1>Register Here</h1>
+    </div>
+</div>
+
+  <!-- The Edit Section -->
+  <div class="bpad" >
+    <div class="travelco paders" style="max-width:800px">
+      <h3 class="Travcenter">Please Complete</h3>
+      <p class="Travcenter"><i><form action="/users" method="POST">
+      <div id="user">
+        <label for="username">Username </label>
+        <input type="text" name="username">
+        </div><br>
+        <div id="password">
+        <label for="password">Password </label>
+        <input type="password" name="password">
+        </div><br>
+         <label for="quote"> What is your favorite quote? </label>
+        <textarea type= "text" rows="4" cols="100" name="quote">
+        </textarea></p>
+     
+      <p class=" Travcenter"><i><div id="experience">
+
+
+<div class="dropdown">
+     <form action="/users" method="POST">
+     <label for="experienceLevel"><h4>What is your current travel experience?</h4> </label>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel" value="No Travel Experience" checked>
+       <label class="form-check-label" for="experienceLevel">No Travel Experience</label></div>
+  
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel"  value="Beginner">
+       <label class="form-check-label" for="experienceLevel">Beginner</label></div>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel" value="Intermediate">
+       <label class="form-check-label" for="experienceLevel">Intermediate</label></div>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel"  value="Advanced">
+       <label class="form-check-label" for="experienceLevel">Advanced</label></div>
+
+       <div class="form-check">
+       <input class="form-check-input" type="radio" name="experienceLevel"  value="Competitive Globetrotter">
+       <label class="form-check-label" for="experienceLevel">Competitive Globetrotter</label></div>
+      <form></i></p><br>
+  </div>
+
+<p class=" Travcenter"><i>
+    <div id="interests">
+        <label for="interests"> What are some of your travel interests? </label>
+        <textarea type= "text" rows="8" cols="100" name="interests">
+        </textarea></p>
+      </div>
+
+      <div id="bucket">
+        <label for="bucketList"> What is on your travel bucket list? </label>
+        <textarea type= "text" rows="8" cols="100" name="bucketList">
+        </textarea></p>
+      </div>
+
+      <div id="home">
+        <label for="hometown"> What is your hometown? </label>
+        <input type="text" name="hometown"></p>
+      </div>
+
+      <div id="submit">
         <input type="submit" value="Submit">
-        </form>
-</div>
-<div class=footer>
-        <%-include ../partials/_footer.ejs%>
-</div>
-</div> 
+        </div>
+
+  </form> </i></p><br>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The Travel Outro Section -->
+  <div class=" travelco paders" style="max-width:800px">
+    <h2 class="Travcenter">Travel Too</h2>
+    <p class=" Travcenter"><i>Collect your Memories!</i></p>
+  </div>
+  
+<!-- Footer -->
+<footer class="paders">
+
+  <%-include ../partials/_footer.ejs%>
+
+</footer>
+
 </body>
 </html>
