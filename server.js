@@ -15,10 +15,10 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/' + 'T
 const db = mongoose.connection;
 const session = require('express-session');
 
-const destinationsController = require("./Controllers/destinationsController")
-const usersController =require('./Controllers/usersController');
+const destinationsController = require("../Controllers/destinationsController")
+const usersController =require('../Controllers/usersController');
 
-const User = require('./Models/Users');
+const User = require('../Models/Users');
 
 
 //middleware
