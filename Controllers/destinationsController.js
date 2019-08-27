@@ -27,6 +27,7 @@ router.get("/new", (req, res)=>{
 //********** CREATE *****************
 router.post("/", async (req, res)=>{
     try{
+        req.body.user = req.session.userId;
         const newDestination = await Destination.create(req.body)
         console.log(newDestination)
         res.redirect("/destinations")

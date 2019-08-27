@@ -1,44 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<%-include ../partials/_head.ejs%> 
-<style>
-a {
-    display: block;
-    padding: 8px;
-    background-color:;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
- a:hover {
-    background-color: turquoise;
- }
-</style>
+
+  <%-include ../partials/_head.ejs%> 
 <body>
-<div class="container">
-<%-include ../partials/_navbar.ejs%>
-<div> 
+
+<div class="grid-container">
+
+  <div class="item1"> <%-include ../partials/_navbar.ejs%> </div>
+
+  <div class="item2">
+   <br>
+<!--New-->
+<h2>Where to?</h2>
+
+<a href = "/destinations/new"> Next </a> </div>
+
+  <div class="item3">
+  
     <h1>Destination Collection</h1>
-</div>
+
 <!--Profile-->
-<a href ="/destinations/show"></a>
+<h2>Past Travels</h2>
 
 <!--Loop-->
-
-       
+<table>
+       <tr>
+           <th></th>
+           <th></th>
+       </tr>
             <%destinationsOnThePage.forEach(function(Destinations,index){%>
        <tr>
-            <a href="/destinations/<%=Destinations._id%>"><%= Destinations.city, Destinations.country%></a>
+            <a href="/destinations/<%=Destinations._id%>"><%= Destinations.city%></a>
        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
        <%})%>
+   </table>
+  
+  </div>  
+  <div class="item4"></div>
 
-
-<br>
-    <footer>
-    <%-include ../partials/_footer.ejs%> 
-    </footer>
+  <div class="item5">
+      <%-include ../partials/_footer.ejs%> 
+  </div>
 </div>
+
 </body>
 </html>

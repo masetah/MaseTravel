@@ -1,12 +1,38 @@
-<div class="navbar">
+<style>
+li {
+  float:left;
+  margin-right: 15px;
+  display: inline;
+}
+a {
+  display: block;
+  padding: 8px;
+  background-color:;
+}
+li a:hover {
+  background-color: turquoise;
+}
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+</style>
+
 <nav>
-  <ul>        
-  <li class="left"><a href="/">Profile</a></li>                   
-  <li class="left"><a href="/destinations">Destinations</a></li>                   
-  <li class="left"><a href="/destinations/new">Submit Destination</a></li>
-  <li class="left"><a href="#">About</a></li>
-  <li class="right"><a href="/">Logout</a></li>                   
-</ul>
-</nav>
-</div>
+                <ul>
+            
+                    <li class="left"><a href="/">Profile</a></li>                   
+                    <li class="left"><a href="/destinations">Destinations</a></li>                   
+                    <li class="left"><a href="/destinations/new">Submit Destinations</a></li> 
+                    <div class=form>
+                    <form action="/logout?_method=DELETE" method="POST">                     
+                    <input type="submit" value="Log Out">
+                    </form>
+                </ul>
+
+            </nav>
+    
 

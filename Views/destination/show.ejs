@@ -1,16 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<%-include ../partials/_head.ejs%>
+
+ <%-include ../partials/_head.ejs%> 
+
 <body>
-<div class="container">
+
+<div class="grid-container">
+  <div class="item1">
+
  <%-include ../partials/_navbar.ejs%> 
+
+  </div>
+  <div class="item2"></div>
+  <div class="item3">
+  
+
     <h1> Your Destination Profile: </h1>
+    <p>Region: <%=destinationsOnThePage.region%> </p>
     <p>City: <%=destinationsOnThePage.city%> </p>
     <p>Country:<%=destinationsOnThePage.country%> </p> 
     <p>Rating: <%=destinationsOnThePage.rating%> </p>
     <p>Description: <%=destinationsOnThePage.description%></p>
-    <p>Visit Season: <%=destinationsOnThePage.visitSeason%></p>
-    <p>Submitted by: <%=destinationsOnThePage.username%></p>
+    <p>Visit Season:<%=destinationsOnThePage.visitSeason%> </p>
 
     
     <form action="/destinations/<%=destinationsOnThePage.id%>?_method=DELETE" method="POST">
@@ -18,8 +30,16 @@
     </form>
 
    <button><a href="/destinations/<%=destinationsOnThePage._id%>/edit">Edit</button>
-        
-    <%-include ../partials/_footer.ejs%>
-</div> 
+
+  </div>  
+  <div class="item4"></div>
+
+  <div class="item5">
+  <%-include ../partials/_footer.ejs%>  
+  </div>
+
+</div>
+
 </body>
 </html>
+
