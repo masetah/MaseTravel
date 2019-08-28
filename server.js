@@ -133,10 +133,6 @@ app.post('/', async (req,res)=>{
 
 //Host
 app.listen(PORT, () => {
-
-//Local Host
-app.listen(3000, () => {
-
     console.log('-Travelers Unite-');
 });
 
