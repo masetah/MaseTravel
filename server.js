@@ -130,8 +130,6 @@ app.post('/', async (req,res)=>{
   }
 })
 
-
-//Host
 app.listen(PORT, () => {
     console.log('-Travelers Unite-');
 });
