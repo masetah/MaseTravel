@@ -27,18 +27,18 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true}, () =>{
 });
 
 //LOCAL
-// app.use(session({
-//     secret: "keepitsecret",
-//     resave: false,
-//     saveUninitialized: false
-// }));
+app.use(session({
+    secret: "keepitsecret",
+    resave: false,
+    saveUninitialized: false
+}));
 
 //HEROKU
-app.use(session({
-  secret: process.env.secret,
-  resave: false,
-  saveUninitialized: false
-}));
+// app.use(session({
+//   secret: process.env.secret,
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
 app.use(express.static('public'));
 app.use(methodOverride('_method'));

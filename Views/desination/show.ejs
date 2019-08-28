@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+html{box-sizing:border-box;
+overflow-x:hidden;
+}
+
+html,body{
+font-family:Verdana,sans-serif;
+font-size:20px;
+line-height:1.5
+}
+
+
+@media 
+(min-width:601px){
+.travelco,
+.TravelAuto{
+margin-left:auto;
+margin-right:auto
+}
+.travelco{
+max-width:980px
+}
+.TravelAuto{
+max-width:1000px
+}}
+
+.Travcenter
+{text-align:center;
+}
+.paders{
+padding-top:40px;
+padding-bottom:40px;
+}
+/* Site Updates */
+input{
+  float: right;
+   
+}
+
+.cont{
+  background-image: url("https://i.imgur.com/4Gl6XpE.jpg");
+  background-size: cover; 
+  position: relative;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: grey;
+}
+.bpad{
+  color:white;
+  background-color: hsla(16, 59%, 70%, 0.623); 
+}
+
+img {
+ 
+  border-radius: 4px; 
+  padding: 5px; 
+  width: 400px;
+  height: 250px; 
+  display: flex;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.box{
+  float: left;
+  width: 18%;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;  
+  width: 70px;
+  height: 40px; 
+  display: flex;
+}
+</style>
+
+<body>
+<!-- Page content -->
+<div class="cont" style="max-width:2000px;margin-top:46px">
+<%-include ../partials/_navbar.ejs%>
+
+  <!-- The Review Section -->
+  <div class=" travelco Travcenter paders" style="max-width:600px">
+    <h1>Review your Collection</h1>
+    </div>
+</div>
+
+  <!-- The color square Section -->
+  <div class="bpad" >
+    <div class=" travelco paders" style="max-width:800px">
+      <h3 class="Travcenter"></h3>
+      <p class=" Travcenter"><i>
+    <table>
+    <h1> <%=destinationsOnThePage.city%>, <%=destinationsOnThePage.country%> </h1>
+
+    <p>Region: <%=destinationsOnThePage.region%>
+    <p>Submitted by: <%=destinationsOnThePage.user.username%>
+   <p>Rating: <%=destinationsOnThePage.rating%>
+   <p>Description: <%=destinationsOnThePage.description%>
+    <p>Visit Season: <%=destinationsOnThePage.visitSeason%>
+
+  <p><button><a href="/destinations/<%=destinationsOnThePage._id%>/edit">Edit</button>
+  </p></div>
+
+   <p><form action="/destinations/<%=destinationsOnThePage.id%>?_method=DELETE" method="POST">
+    <button type="submit" value="DELETE">Delete</button>
+    </form>
+
+  </table></i></p><br>
+  </div>
+  </div>
+  
+
+  <!-- The Travel Outro Section -->
+  <div class=" travelco paders" style="max-width:800px">
+    <h2 class=" Travcenter">Travel Too</h2>
+    <p class="Travcenter"><i>Collect your Memories!</i></p>
+  </div>
+  
+
+
+<!-- Footer -->
+<footer class="paders">
+
+  <%-include ../partials/_footer.ejs%>
+
+</footer>
+
+</body>
+</html>
